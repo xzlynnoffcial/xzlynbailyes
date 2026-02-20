@@ -1,10 +1,10 @@
-# <div align='center'>Wileys</div>
+# <div align='center'>Xzlynbailyes</div>
 
 <div align='center'>
 
-[![npm version](https://img.shields.io/npm/v/wileys.svg)](https://www.npmjs.com/package/wileys)
-[![License](https://img.shields.io/badge/license-GPL%203-blue.svg)](LICENSE)
-[![Downloads](https://img.shields.io/npm/dm/wileys.svg)](https://www.npmjs.com/package/wileys)
+[![Version](https://img.shields.io/github/v/release/xzlynnoffcial/xzlynbailyes?include_prereleases)](https://github.com/xzlynnoffcial/xzlynbailyes)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/xzlynnoffcial/xzlynbailyes.svg)](https://github.com/xzlynnoffcial/xzlynbailyes/stargazers)
 
 </div>
 
@@ -22,7 +22,8 @@ https://cdn.yupra.my.id/yp/eocz6gnv.html
 ## ✨ Fitur Utama
 
 - 🚀 **Modern & Cepat** - Dibangun dengan TypeScript dan teknologi terbaru
-- 🔧 **Perbaikan @lid & @jid** - Mengatasi masalah @lid ke @pn di grup WhatsApp
+- � **Newsletter Annotations** - Dukungan otomatis untuk menyematkan metadata saluran (newsletter) pada pesan media (Gambar, Video, Dokumen)
+- �🔧 **Perbaikan @lid & @jid** - Mengatasi masalah @lid ke @pn di grup WhatsApp
 - 📱 **Dukungan Multi-Device** - Mendukung koneksi multi-device WhatsApp
 - 🔐 **Enkripsi End-to-End** - Komunikasi terenkripsi penuh
 - 📨 **Semua Jenis Pesan** - Dukung teks, media, polling, dll.
@@ -37,27 +38,38 @@ Gunakan dengan bijak. Hindari spam. Jangan gunakan otomatisasi berlebihan.
 
 ## 📦 Instalasi
 
-### Versi Stabil (Direkomendasikan)
+Gunakan perintah di bawah ini untuk menginstal langsung dari GitHub:
 
 ```bash
-npm i wileys
-```
-
-### Versi Edge (Fitur Terbaru)
-
-```bash
-npm i wileys@latest
-# atau
-yarn add wileys@latest
+npm install github:xzlynnoffcial/xzlynbailyes
 ```
 
 ### Impor di Kode
 
 ```javascript
-const { default: makeWASocket } = require("wileys")
+const { default: makeWASocket } = require("xzlynbailyes")
 // atau ES6
-import makeWASocket from "wileys"
+import makeWASocket from "xzlynbailyes"
 ```
+
+## 📢 Newsletter Annotations
+
+Library ini mendukung metadata saluran (Newsletter) secara otomatis pada pengiriman pesan media. Fitur ini menggunakan koordinat statis yang dioptimalkan untuk tampilan yang presisi.
+
+### Cara Penggunaan
+
+Anda dapat menyertakan objek `newsletter` di dalam `options` saat memanggil `sendMessage`:
+
+```javascript
+await sock.sendMessage(jid, { 
+    image: { url: '...' }, 
+    caption: 'Halo!',
+    newsletterJid: '120363420826321579@newsletter',
+    newsletterName: 'Xzlynn Channel'
+})
+```
+
+Jika `newsletterJid` tidak disertakan, library akan menggunakan nilai default atau metadata kosong.
 
 ## 🚀 Mulai Cepat
 
