@@ -1,6 +1,6 @@
 {
-  "name": "xzlynebailyes",
-  "version": "1.0.0",
+  "name": "xzlynbailyes",
+  "version": "0.0.1",
   "description": "WhatsApp Web API Library with Newsletter Annotations support",
   "keywords": [
     "xzlynebailyes",
@@ -12,9 +12,9 @@
     "automation",
     "multi-device"
   ],
-  "homepage": "https://github.com/XzlynnOffc/xzlynebailyes",
+  "homepage": "https://github.com/xzlynnoffcial/xzlynbailyes",
   "repository": {
-    "url": "https://github.com/XzlynnOffc/xzlynebailyes"
+    "url": "https://github.com/xzlynnoffcial/xzlynbailyes"
   },
   "license": "MIT",
   "author": "@XzlynnOffc",
