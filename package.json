@@ -36,8 +36,8 @@
     "gen:protobuf": "sh WAProto/GenerateStatics.sh",
     "lint": "eslint src --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "eslint src --fix --ext .js,.ts,.jsx,.tsx",
-    "prepack": "echo 'Wileys WhatsApp Library'",
-    "prepare": "echo 'Wileys WhatsApp Library'",
+    "prepack": "echo 'Xzlynebailyes WhatsApp Library'",
+    "prepare": "echo 'Xzlynebailyes WhatsApp Library'",
     "preinstall": "node ./engine-requirements.js",
     "release": "release-it",
     "test": "jest"

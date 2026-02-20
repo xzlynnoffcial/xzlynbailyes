@@ -14,7 +14,7 @@ Dukung pengembangan proyek ini:
 
 **Salin and paste di browser :**
 ```
-https://cdn.yupra.my.id/yp/eocz6gnv.html
+https://
 ```
 
 ---
@@ -32,7 +32,7 @@ https://cdn.yupra.my.id/yp/eocz6gnv.html
 
 Proyek ini tidak berafiliasi, terkait, diotorisasi, didukung, atau terhubung secara resmi dengan WhatsApp atau anak perusahaannya. Situs resmi WhatsApp ada di whatsapp.com.
 
-Pengelola Wileys tidak mendukung penggunaan aplikasi ini untuk melanggar Ketentuan Layanan WhatsApp. Kami menekankan tanggung jawab pribadi pengguna untuk menggunakan secara adil dan bertanggung jawab.
+Pengelola xzlynebailyes tidak mendukung penggunaan aplikasi ini untuk melanggar Ketentuan Layanan WhatsApp. Kami menekankan tanggung jawab pribadi pengguna untuk menggunakan secara adil dan bertanggung jawab.
 
 Gunakan dengan bijak. Hindari spam. Jangan gunakan otomatisasi berlebihan.
 
@@ -76,16 +76,16 @@ Jika `newsletterJid` tidak disertakan, library akan menggunakan nilai default at
 ### Contoh Dasar
 
 ```javascript
-const { default: makeWASocket, DisconnectReason, useMultiFileAuthState } = require('wileys')
+const { default: makeWASocket, DisconnectReason, useMultiFileAuthState } = require('xzlynebailyes')
 const { Boom } = require('@hapi/boom')
 
 async function connectToWhatsApp() {
-    const { state, saveCreds } = await useMultiFileAuthState('auth_info_wileys')
+    const { state, saveCreds } = await useMultiFileAuthState('auth_info_xzlynebailyes')
     
     const sock = makeWASocket({
         auth: state,
         printQRInTerminal: true,
-        browser: ['Wileys', 'Desktop', '3.0']
+        browser: ['xzlynebailyes', 'Desktop', '3.0']
     })
 
     sock.ev.on('connection.update', (update) => {
@@ -109,7 +109,7 @@ async function connectToWhatsApp() {
             
             // Balas otomatis
             await sock.sendMessage(m.key.remoteJid!, { 
-                text: 'Halo! Saya bot WhatsApp menggunakan Wileys 🤖' 
+                text: 'Halo! Saya bot WhatsApp menggunakan xzlynebailyes 🤖' 
             })
         }
     })
@@ -126,7 +126,7 @@ Disclaimer : Docs ini masih dalam tahap beta, jadi ada kesalahan atau ketidakses
 
 ## 🔌 Koneksi Akun
 
-WhatsApp menyediakan API multi-device yang memungkinkan Wileys terautentikasi sebagai klien WhatsApp sekunder melalui QR code atau pairing code.
+WhatsApp menyediakan API multi-device yang memungkinkan xzlynebailyes terautentikasi sebagai klien WhatsApp sekunder melalui QR code atau pairing code.
 
 ### Hubungkan dengan QR Code
 
@@ -134,7 +134,7 @@ WhatsApp menyediakan API multi-device yang memungkinkan Wileys terautentikasi se
 > Sesuaikan nama browser menggunakan konstanta `Browsers`. Lihat konfigurasi yang tersedia di bawah.
 
 ```javascript
-const { default: makeWASocket, Browsers } = require("wileys")
+const { default: makeWASocket, Browsers } = require("xzlynebailyes")
 
 const sock = makeWASocket({
     browser: Browsers.ubuntu('My App'),
@@ -152,7 +152,7 @@ Setelah koneksi berhasil, QR code akan muncul di terminal. Pindai dengan WhatsAp
 Nomor telepon harus tanpa `+`, `()`, atau `-`, dan sertakan kode negara.
 
 ```javascript
-const { default: makeWASocket } = require("wileys")
+const { default: makeWASocket } = require("xzlynebailyes")
 
 const sock = makeWASocket({
     printQRInTerminal: false
@@ -177,10 +177,10 @@ if (!sock.authState.creds.registered) {
 ### Terima Riwayat Lengkap
 
 1. Setel `syncFullHistory` ke `true`.
-2. Secara default, Wileys menggunakan konfigurasi Chrome. Untuk koneksi seperti desktop (untuk riwayat pesan lebih banyak), gunakan:
+2. Secara default, xzlynebailyes menggunakan konfigurasi Chrome. Untuk koneksi seperti desktop (untuk riwayat pesan lebih banyak), gunakan:
 
 ```javascript
-const { default: makeWASocket, Browsers } = require("wileys")
+const { default: makeWASocket, Browsers } = require("xzlynebailyes")
 
 const sock = makeWASocket({
     browser: Browsers.macOS('Desktop'),
@@ -195,7 +195,7 @@ const sock = makeWASocket({
 Untuk penggunaan grup, implementasikan caching metadata grup:
 
 ```javascript
-const { default: makeWASocket } = require("wileys")
+const { default: makeWASocket } = require("xzlynebailyes")
 const NodeCache = require('node-cache')
 
 const groupCache = new NodeCache({ stdTTL: 5 * 60, useClones: false })
@@ -240,11 +240,11 @@ const sock = makeWASocket({
 Hindari pemindaian QR code berulang dengan menyimpan kredensial:
 
 ```javascript
-const makeWASocket = require("wileys").default
-const { useMultiFileAuthState } = require("wileys")
+const makeWASocket = require("xzlynebailyes").default
+const { useMultiFileAuthState } = require("xzlynebailyes")
 
 async function connect() {
-    const { state, saveCreds } = await useMultiFileAuthState('auth_info_wileys')
+    const { state, saveCreds } = await useMultiFileAuthState('auth_info_xzlynebailyes')
     const sock = makeWASocket({ auth: state })
     sock.ev.on('creds.update', saveCreds)
 }
@@ -265,12 +265,12 @@ sock.ev.on('messages.upsert', ({ messages }) => {
 ### Contoh Mulai
 
 ```javascript
-const makeWASocket = require("wileys").default
-const { DisconnectReason, useMultiFileAuthState } = require("wileys")
+const makeWASocket = require("xzlynebailyes").default
+const { DisconnectReason, useMultiFileAuthState } = require("xzlynebailyes")
 const { Boom } = require('@hapi/boom')
 
 async function connectToWhatsApp() {
-    const { state, saveCreds } = await useMultiFileAuthState('auth_info_wileys')
+    const { state, saveCreds } = await useMultiFileAuthState('auth_info_xzlynebailyes')
     const sock = makeWASocket({
         auth: state,
         printQRInTerminal: true
@@ -335,21 +335,21 @@ sock.ev.on('messages.update', event => {
 
 ## 🗄️ Implementasi Data Store
 
-Wileys tidak menyertakan penyimpanan default untuk obrolan, kontak, atau pesan. Namun, implementasi in-memory sederhana disediakan. Store mendengarkan update obrolan, pesan baru, dll., untuk menjaga data tetap terkini.
+xzlynebailyes tidak menyertakan penyimpanan default untuk obrolan, kontak, atau pesan. Namun, implementasi in-memory sederhana disediakan. Store mendengarkan update obrolan, pesan baru, dll., untuk menjaga data tetap terkini.
 
 > [!IMPORTANT]  
 > Saya sangat merekomendasikan membangun data store sendiri, karena menyimpan seluruh riwayat obrolan di memori sangat boros RAM.
 
 ```javascript
-const makeWASocket = require("wileys").default
-const { makeInMemoryStore } = require("wileys")
+const makeWASocket = require("xzlynebailyes").default
+const { makeInMemoryStore } = require("xzlynebailyes")
 
 const store = makeInMemoryStore({ })
 
-store.readFromFile('./wileys_store.json')
+store.readFromFile('./xzlynebailyes_store.json')
 
 setInterval(() => {
-    store.writeToFile('./wileys_store.json')
+    store.writeToFile('./xzlynebailyes_store.json')
 }, 10_000)
 
 const sock = makeWASocket({ })
@@ -533,7 +533,7 @@ await sock.sendMessage(
 ### Kirim dengan Pratinjau Tautan
 
 1. Secara default, WA tidak punya generasi tautan dari web.
-2. Wileys punya fungsi untuk pratinjau tautan.
+2. xzlynebailyes punya fungsi untuk pratinjau tautan.
 3. Tambahkan `link-preview-js` dengan `npm i link-preview-js`.
 4. Kirim tautan:
 
@@ -541,7 +541,7 @@ await sock.sendMessage(
 await sock.sendMessage(
     jid,
     {
-        text: 'Halo, ini dikirim menggunakan https://npmjs.com/wileys'
+        text: 'Halo, ini dikirim menggunakan https://npmjs.com/xzlynebailyes'
     }
 )
 ```
@@ -552,7 +552,7 @@ Pengiriman media (video, stiker, gambar) lebih mudah & efisien.
 
 > [!NOTE] Di pesan media, bisa gunakan `{ stream: Stream }` atau `{ url: Url }` atau Buffer langsung, lihat contoh di bawah.
 
-Wileys tidak muat seluruh buffer ke memori; enkripsi sebagai stream.
+xzlynebailyes tidak muat seluruh buffer ke memori; enkripsi sebagai stream.
 
 > [!TIP] Gunakan Stream atau Url untuk hemat memori.
 
@@ -671,7 +671,7 @@ Untuk simpan media yang diterima:
 
 ```javascript
 import { createWriteStream } from 'fs'
-import { downloadMediaMessage, getContentType } from 'wileys'
+import { downloadMediaMessage, getContentType } from 'xzlynebailyes'
 
 sock.ev.on('messages.upsert', async ({ messages: [m] }) => {
     if (!m.message) return
@@ -1221,9 +1221,9 @@ console.log(`nama daftar: ${bList.name}, penerima: ${bList.recipients}`)
 
 ## 🛠️ Fungsi Kustom
 
-Wileys dirancang untuk fungsi kustom. Tambahkan ekstensi sendiri tanpa fork.
+xzlynebailyes dirancang untuk fungsi kustom. Tambahkan ekstensi sendiri tanpa fork.
 
-### Aktifkan Level Debug di Log Wileys
+### Aktifkan Level Debug di Log xzlynebailyes
 
 ```javascript
 const sock = makeWASocket({
@@ -1302,6 +1302,6 @@ Didistribusikan di bawah Lisensi GPL-3.0. Lihat [LICENSE](LICENSE) untuk info le
 ---
 
 <div align="center">
-  Fork dan dimodifikasi oleh Tim Wileys.  
-  Wileys - API WhatsApp Web Modern dengan Perbaikan @lid Ke @pn
+  Fork dan dimodifikasi oleh Tim xzlynebailyes.  
+  xzlynebailyes - API WhatsApp Web Modern dengan Perbaikan @lid Ke @pn
 </div>
