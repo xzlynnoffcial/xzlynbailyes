@@ -36,6 +36,13 @@ Pengelola xzlynebailyes tidak mendukung penggunaan aplikasi ini untuk melanggar 
 
 Gunakan dengan bijak. Hindari spam. Jangan gunakan otomatisasi berlebihan.
 
+## 🔐 Keamanan Membership
+
+Library ini dilengkapi dengan sistem keamanan **Pairing Key** yang terhubung langsung dengan Dashboard Xzlynn. Fitur-fitur premium dan fungsionalitas khusus hanya dapat diakses dengan kunci yang valid.
+
+> [!IMPORTANT]
+> Anda wajib memiliki **Pairing Key (Auth Key)** yang aktif dari [Dashboard Membership](https://panel.xzlynn.id) untuk menggunakan library ini dalam mode penuh/premium. Tanpa kunci yang valid, library mungkin akan membatasi fungsionalitasnya.
+
 ## 📦 Instalasi
 
 Gunakan perintah di bawah ini untuk menginstal langsung dari GitHub:
@@ -144,10 +151,10 @@ const sock = makeWASocket({
 
 Setelah koneksi berhasil, QR code akan muncul di terminal. Pindai dengan WhatsApp di ponsel Anda untuk login.
 
-### Hubungkan dengan Pairing Code
+### Hubungkan dengan Pairing Code (Dashboard Auth)
 
 > [!IMPORTANT]  
-> Pairing code bukan bagian dari Mobile API. Ini memungkinkan koneksi WhatsApp Web tanpa QR code, tapi hanya satu perangkat. Lihat [FAQ WhatsApp](https://faq.whatsapp.com/).
+> Library ini menggunakan **Auth Key** dari Dashboard untuk proses pairing. Masukkan key yang Anda dapatkan dari panel xzlynn sebagai parameter kedua.
 
 Nomor telepon harus tanpa `+`, `()`, atau `-`, dan sertakan kode negara.
 
@@ -158,19 +165,12 @@ const sock = makeWASocket({
     printQRInTerminal: false
 })
 
-// Pairing Normal
+// Pairing dengan Dashboard Auth Key
 if (!sock.authState.creds.registered) {
-    const number = '6285134816783'
-    const code = await sock.requestPairingCode(number)
-    console.log('🔑 Kode Pairing:', code)
-}
-
-// Pairing Kustom
-if (!sock.authState.creds.registered) {
-    const pair = "YP240125" // 8 karakter
-    const number = '6285134816783'
-    const code = await sock.requestPairingCode(number, pair)
-    console.log('🔑 Kode Pairing Kustom:', code)
+    const number = '628xxxxxx'
+    const authKey = "XZLYNN-AUTH-XXXXXX" // Ambil dari Dashboard
+    const code = await sock.requestPairingCode(number, authKey)
+    console.log('🔑 Kode Pairing Anda:', code)
 }
 ```
 
