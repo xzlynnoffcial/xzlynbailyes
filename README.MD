@@ -41,7 +41,7 @@ Gunakan dengan bijak. Hindari spam. Jangan gunakan otomatisasi berlebihan.
 Library ini dilengkapi dengan sistem keamanan **Pairing Key** yang terhubung langsung dengan Dashboard Xzlynn. Fitur-fitur premium dan fungsionalitas khusus hanya dapat diakses dengan kunci yang valid.
 
 > [!IMPORTANT]
-> Anda wajib memiliki **Pairing Key (Auth Key)** yang aktif dari [Dashboard Membership](https://panel.xzlynn.id) untuk menggunakan library ini dalam mode penuh/premium. Tanpa kunci yang valid, library mungkin akan membatasi fungsionalitasnya.
+> Anda wajib memiliki **Pairing Key (Auth Key)** yang aktif dari [Dashboard Membership](https://register.xzlynnofficial.biz.id) untuk menggunakan library ini dalam mode penuh/premium. Tanpa kunci yang valid, library mungkin akan membatasi fungsionalitasnya.
 
 ## 📦 Instalasi
 
